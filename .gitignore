@@ -1,0 +1,30 @@
+# Secrets and local environment
+.env
+.env.*
+*.pem
+*.key
+
+# Claude Code local-only settings
+.claude/settings.local.json
+
+# Tool-local state
+.codemie/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+.cache/
+coverage/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
