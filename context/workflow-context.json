@@ -1,0 +1,21 @@
+{
+  "storyId": "KAN-4",
+  "summary": "Agentic SDLC Automation for Regression Test Documentation.",
+  "description": "As a QA Engineer, I want an Agentic SDLC workflow that retrieves Jira stories through Atlassian MCP and automatically generates SDLC artifacts, So that requirements, architecture, design review, implementation plan, code review, verification report and PR documentation are synchronized and traceable.",
+  "acceptanceCriteria": [
+    "Jira story is retrieved through Atlassian MCP.",
+    "Requirements Agent generates requirements.md.",
+    "Architecture Agent generates architecture.md.",
+    "Design Review Agent generates design-review.md.",
+    "Implementation Planner Agent generates impl-plan.md.",
+    "Implementation Agent generates implementation-summary.md.",
+    "Code Review Agent generates code-review.md.",
+    "Verification Agent generates verification-report.md.",
+    "PR Creator Agent generates pr-summary.md.",
+    "Artifacts are stored under docs/<story-id>/.",
+    "Approval gates exist between SDLC phases.",
+    "Pull Request can be created through GitHub MCP."
+  ],
+  "labels": ["agentic-sdlc", "capstone", "mcp", "testing"],
+  "status": "To Do"
+}

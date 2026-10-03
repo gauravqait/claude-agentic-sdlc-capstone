@@ -1,14 +1,12 @@
 # Secrets and local environment
 .env
 .env.*
+!.env.example
 *.pem
 *.key
 
 # Claude Code local-only settings
 .claude/settings.local.json
-
-# Tool-local state
-.codemie/
 
 # Node
 node_modules/
@@ -19,7 +17,6 @@ yarn-error.log*
 *.log
 *.tmp
 *.bak
-.cache/
 coverage/
 
 # OS and editor
@@ -28,3 +25,4 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+.claude/*.docx
