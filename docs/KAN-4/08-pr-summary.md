@@ -17,7 +17,7 @@ Adds an agentic SDLC pipeline that turns Jira story KAN-4 into eight reviewed ar
 | `.claude/rules/*.md` (4), `.claude/settings.json`, `CLAUDE.md` | Code quality, git, secrets, workflow-state rules; hook wiring; project guide |
 | `docs/KAN-4/01-...08-*.md`, per-story state file | Pipeline artifacts and approval state |
 | `tests/hooks-test.md`, `e2e-test.md`, `pr-test.md` | Hook, end-to-end and PR-validation checks |
-| `context/workflow-context.json`, `.env.example`, `.gitignore`, `README.md`, `.claude/claude-capstone-project.docx` | Jira context, env template (no values), ignore rules, docs, project brief |
+| `context/workflow-context.json`, `.env.example`, `.gitignore`, `README.md` | Jira context, env template (no values), ignore rules, docs |
 
 ## Test Evidence (from 07-verification-report.md, verdict PASS)
 | Suite | Result |
