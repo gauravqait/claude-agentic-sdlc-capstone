@@ -1,7 +1,7 @@
 {
   "story": "KAN-5",
-  "progress": "🟢⏳⚪⚪⚪⚪⚪⚪ 1/8 approved",
-  "next": "02-architecture",
+  "progress": "🟢🟢⏳⚪⚪⚪⚪⚪ 2/8 approved",
+  "next": "03-design-review",
   "steps": {
     "1": {
       "mark": "🟢",
@@ -10,16 +10,16 @@
       "status": "approved"
     },
     "2": {
-      "mark": "⏳",
+      "mark": "🟢",
       "agent": "02-architecture.agent.md",
       "artifact": "02-architecture.md",
-      "status": "in_progress"
+      "status": "approved"
     },
     "3": {
-      "mark": "⚪",
+      "mark": "⏳",
       "agent": "03-design-review.agent.md",
       "artifact": "03-design-review.md",
-      "status": "pending"
+      "status": "in_progress"
     },
     "4": {
       "mark": "⚪",
