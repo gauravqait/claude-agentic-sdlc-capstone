@@ -1,7 +1,7 @@
 {
   "story": "KAN-5",
-  "progress": "🟢🟢🟢⏳⚪⚪⚪⚪ 3/8 approved",
-  "next": "04-implementation-planner",
+  "progress": "🟢🟢🟢🟢⚪⚪⚪⚪ 4/8 approved",
+  "next": "05-implementation (paused: flow rework requested by user)",
   "steps": {
     "1": {
       "mark": "🟢",
@@ -22,10 +22,10 @@
       "status": "approved"
     },
     "4": {
-      "mark": "⏳",
+      "mark": "🟢",
       "agent": "04-implementation-planner.agent.md",
       "artifact": "04-impl-plan.md",
-      "status": "in_progress"
+      "status": "approved"
     },
     "5": {
       "mark": "⚪",
