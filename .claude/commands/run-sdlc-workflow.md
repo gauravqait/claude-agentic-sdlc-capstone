@@ -19,8 +19,8 @@ For each step:
 3. Check the real output, not the agent's claim, against this fixed list: file exists and is non-empty; covers every Jira AC and the previous artifact; nothing invented (`Not Found` where missing); no secrets; only the expected file changed, inside `docs/$ARGUMENTS/` (steps 5 to 7 also need real code, test output or findings). If any other file changed, or a file changed outside `docs/$ARGUMENTS/` (other than the code and tests of step 5), reject the step.
 4. **Pass → approve:** update the state file, commit `docs($ARGUMENTS): <artifact>`. An approved step is frozen; later steps never reopen it.
    **Fail → reject:** list only the failed checks and call the same subagent again with them. After 2 rejections of one step, ask the user.
-5. Review steps (3, 6, 7): a blocking finding loops back as in `.claude/rules/workflow-state.md`; Medium/Low findings go forward as notes to the next step.
-6. Show the board below and start the next step. Stop only before step 8, after 2 loops, on an agent question, or when the user asks.
+5. Review steps (3, 6, 7): a blocking finding rejects that step (no loop back to earlier steps); Medium/Low findings go forward as notes to the next step.
+6. Show the board below and start the next step. Stop only before step 8, after 2 rejections of one step, on an agent question, or when the user asks.
 
 ```
 <STORY-ID> · 5/8 approved
@@ -31,6 +31,6 @@ Next: 06-code-review
 ```
 🟢 approved · ⏳ working or awaiting · 🔴 rejected · ⚪ pending
 
-Start step N+1 only when step N is `approved`. Step 8b (PR creation) needs explicit user approval after readiness checks (a)-(f) in `.claude/skills/02-pr-validation-skill.md` pass; a failed check blocks, names the check and routes back to the step that must fix it.
+Start step N+1 only when step N is `approved`. Step 8b (PR creation) needs explicit user approval after readiness checks (a)-(f) in `.claude/skills/02-pr-validation-skill.md` pass; a failed check blocks, names the check and stops for the user.
 
 Show the PR link after step 8.

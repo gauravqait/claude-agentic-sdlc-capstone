@@ -22,7 +22,7 @@ Input: `<STORY-ID>`. Read `docs/<STORY-ID>/08-pr-summary.md` and report PASS or 
 Any FAIL: list the fixes and do not raise the PR.
 
 ## PR readiness checks (a)-(f)
-Run via the `github` MCP server after the draft, before user approval. Print `FAIL (x): <reason>` or `PASS (x)` for each. Any FAIL blocks the PR, names the check and routes back to the step that must fix it.
+Run via the `github` MCP server after the draft, before user approval. Print `FAIL (x): <reason>` or `PASS (x)` for each. Any FAIL blocks the PR, names the check and stops for the user.
 
 | Check | Definition |
 |---|---|

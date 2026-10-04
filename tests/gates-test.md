@@ -18,11 +18,11 @@ Run in the same shell as section 1 (uses `$H`).
 echo '{"tool_name":"Write","agent_id":"a","tool_input":{"file_path":"docs/ABC-1/pipeline-state.json"}}' | bash $H/pipeline-guard.sh; echo "want 2: $?"
 ```
 
-## 3. Loop-back, 2-loop limit, step 8 approval are written
+## 3. No loop-back, 2-rejection limit, step 8 approval are written
 ```bash
 R=.claude/rules/workflow-state.md; C=.claude/commands/run-sdlc-workflow.md
-grep -c 'reset to `pending`' $R | sed 's/^/want 1: /'
-grep -c 'After 2 loops the orchestrator asks the user' $R | sed 's/^/want 1: /'
+grep -c 'There is no loop back to an earlier step' $R | sed 's/^/want 1: /'
+grep -c 'After 2 rejections of one step the orchestrator asks the user' $R | sed 's/^/want 1: /'
 grep -c 'Step 8 (PR) needs explicit user approval' $R | sed 's/^/want 1: /'
 grep -c 'Start step N+1 only when step N is `approved`' $C | sed 's/^/want 1: /'
 grep -c 'Step 8b (PR creation) needs explicit user approval' $C | sed 's/^/want 1: /'

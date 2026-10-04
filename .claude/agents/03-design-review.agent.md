@@ -21,7 +21,7 @@ Review `docs/<STORY-ID>/02-architecture.md` against `01-requirements.md` and wri
 - Rate each finding High, Medium or Low, with a concrete fix.
 - Cover security, error handling, scalability and requirement coverage.
 - Write exactly one artifact (`docs/<STORY-ID>/03-design-review.md`). Missing data is written as `Not Found`, never invented.
-- Review once against the ACs and the self-check list in `02-architecture.md`. Only High findings are blocking: verdict FAIL and name the step that must fix them. Medium and Low go under Forward notes for step 4, never a loop.
+- Review once against the ACs and the self-check list in `02-architecture.md`. Only High findings are blocking: verdict FAIL and list them. Medium and Low go under Forward notes for step 4.
 - Do not edit `02-architecture.md`. On a re-review, check only the previously failed items and anything the rework changed.
 - Start the file with `Verdict: PASS` or `Verdict: FAIL`.
 

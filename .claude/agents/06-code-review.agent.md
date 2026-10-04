@@ -22,7 +22,7 @@ Review the changes listed in `docs/<STORY-ID>/05-implementation-summary.md` agai
 - Give a verdict per area (PASS / FAIL) with file and line for every FAIL.
 - Read only. Do not fix code. Send failures back to `05-implementation`.
 - Write exactly one artifact (`docs/<STORY-ID>/06-code-review.md`). Missing data is written as `Not Found`, never invented.
-- Only Correctness, Security or AC failures make the verdict CHANGES REQUESTED. Clarity and style points are Forward notes for step 7, never a loop.
+- Only Correctness, Security or AC failures make the verdict CHANGES REQUESTED. Clarity and style points are Forward notes for step 7.
 - Start the file with `Verdict: APPROVED` or `Verdict: CHANGES REQUESTED`. Review only what `05` changed; do not reopen approved steps 1-4.
 
 ## Type of output
