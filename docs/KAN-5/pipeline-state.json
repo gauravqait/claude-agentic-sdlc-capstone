@@ -1,0 +1,55 @@
+{
+  "story": "KAN-5",
+  "progress": "🟢⏳⚪⚪⚪⚪⚪⚪ 1/8 approved",
+  "next": "02-architecture",
+  "steps": {
+    "1": {
+      "mark": "🟢",
+      "agent": "01-requirements.agent.md",
+      "artifact": "01-requirements.md",
+      "status": "approved"
+    },
+    "2": {
+      "mark": "⏳",
+      "agent": "02-architecture.agent.md",
+      "artifact": "02-architecture.md",
+      "status": "in_progress"
+    },
+    "3": {
+      "mark": "⚪",
+      "agent": "03-design-review.agent.md",
+      "artifact": "03-design-review.md",
+      "status": "pending"
+    },
+    "4": {
+      "mark": "⚪",
+      "agent": "04-implementation-planner.agent.md",
+      "artifact": "04-impl-plan.md",
+      "status": "pending"
+    },
+    "5": {
+      "mark": "⚪",
+      "agent": "05-implementation.agent.md",
+      "artifact": "05-implementation-summary.md",
+      "status": "pending"
+    },
+    "6": {
+      "mark": "⚪",
+      "agent": "06-code-review.agent.md",
+      "artifact": "06-code-review.md",
+      "status": "pending"
+    },
+    "7": {
+      "mark": "⚪",
+      "agent": "07-verification.agent.md",
+      "artifact": "07-verification-report.md",
+      "status": "pending"
+    },
+    "8": {
+      "mark": "⚪",
+      "agent": "08-pr-creator.agent.md",
+      "artifact": "08-pr-summary.md",
+      "status": "pending"
+    }
+  }
+}
