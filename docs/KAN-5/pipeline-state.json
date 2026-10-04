@@ -1,7 +1,7 @@
 {
   "story": "KAN-5",
-  "progress": "🟢🟢🟢🟢🟢⏳⚪⚪ 5/8 approved",
-  "next": "06-code-review",
+  "progress": "🟢🟢🟢🟢🟢🟢⏳⚪ 6/8 approved",
+  "next": "07-verification",
   "steps": {
     "1": {
       "mark": "🟢",
@@ -34,16 +34,16 @@
       "status": "approved"
     },
     "6": {
-      "mark": "⏳",
+      "mark": "🟢",
       "agent": "06-code-review.agent.md",
       "artifact": "06-code-review.md",
-      "status": "in_progress"
+      "status": "approved"
     },
     "7": {
-      "mark": "⚪",
+      "mark": "⏳",
       "agent": "07-verification.agent.md",
       "artifact": "07-verification-report.md",
-      "status": "pending"
+      "status": "in_progress"
     },
     "8": {
       "mark": "⚪",
