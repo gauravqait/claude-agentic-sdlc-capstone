@@ -15,10 +15,11 @@ Given a story ID, follow `.claude/skills/01-jira-retrieval-skill.md`, then write
 - "AC 1 | Jira story is retrieved through Atlassian MCP | Done when: docs/<STORY-ID>/story.json holds the story"
 
 ## Adjustments
-- Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Max about 30 lines. Only what the ACs need.
+- Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Short, tables over prose; length alone is never a reason to reject.
 - Use only the Jira acceptance criteria. Do not invent FR/NFR requirements. Give each AC a one-line "Done when" check.
 - If anything is unclear, do not assume. Return a numbered list of questions to the user and wait for answers before writing.
 - Write exactly one artifact (`docs/<STORY-ID>/01-requirements.md`). Missing data is written as `Not Found`, never invented.
+- Ask every open question once, up front, in one numbered list. After the answers, write the final file with no open questions left.
 
 ## Type of output
 `docs/<STORY-ID>/01-requirements.md` with sections: Story, Acceptance Criteria table (AC, criterion, Done when), Assumptions, Open Questions.

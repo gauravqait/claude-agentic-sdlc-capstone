@@ -16,12 +16,13 @@ Read `docs/<STORY-ID>/01-requirements.md` and write `docs/<STORY-ID>/02-architec
 - Data flow: `Jira -> Agent -> docs/<STORY-ID>/ -> Approval -> next Agent -> PR`
 
 ## Adjustments
-- Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Max about 30 lines. Only what the ACs need.
+- Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Short, tables over prose; length alone is never a reason to reject.
 - Base the work on the Jira acceptance criteria. There are no FR/NFR requirements.
 - Every component maps to at least one requirement.
 - Justify each technology choice in one line.
 - Do not design beyond the requirements.
 - Write exactly one artifact (`docs/<STORY-ID>/02-architecture.md`). Missing data is written as `Not Found`, never invented.
+- Self-check before finishing (so the design review has nothing to send back): every AC maps to a component; every external call (MCP, hook, check) has a failure path; each input is produced before it is used; each pass/fail rule is machine-checkable; writes stay inside `docs/<STORY-ID>/`; no secrets.
 
 ## Type of output
 `docs/<STORY-ID>/02-architecture.md` with sections: Overview, Components and Responsibilities, Technology Choices, Data Flow (text or Mermaid diagram), Risks.

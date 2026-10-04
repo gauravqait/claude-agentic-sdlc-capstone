@@ -15,11 +15,11 @@ You are the orchestrator for story **$ARGUMENTS**. Delegate every step to its su
 For each step:
 1. Set it to `in_progress` (⏳) and call the subagent with the story ID and the previous artifact paths only. If it returns questions, ask the user and call it again with the answers.
 2. When it finishes, show a short summary of the artifact, its path, and the `docs/$ARGUMENTS/` file list.
-3. Check the real output, not the agent's claim: file exists and is non-empty, covers the Jira ACs and the previous artifact, nothing invented (`Not Found` where missing), no secrets. Steps 5 to 7 also need real evidence (code, test output, findings).
-4. **Pass → approve:** update the state file, commit `docs($ARGUMENTS): <artifact>`.
-   **Fail → reject:** list the failed checks and call the same subagent again with them. After 2 rejections of one step, ask the user.
-5. Review steps that report problems: reset and loop back as in `.claude/rules/workflow-state.md`.
-6. **Stop.** Show the board below and name the next agent. Continue only when the user says so.
+3. Check the real output, not the agent's claim, against this fixed list: file exists and is non-empty; covers every Jira AC and the previous artifact; nothing invented (`Not Found` where missing); no secrets; only the expected file changed, inside `docs/$ARGUMENTS/` (steps 5 to 7 also need real code, test output or findings).
+4. **Pass → approve:** update the state file, commit `docs($ARGUMENTS): <artifact>`. An approved step is frozen; later steps never reopen it.
+   **Fail → reject:** list only the failed checks and call the same subagent again with them. After 2 rejections of one step, ask the user.
+5. Review steps (3, 6, 7): a blocking finding loops back as in `.claude/rules/workflow-state.md`; Medium/Low findings go forward as notes to the next step.
+6. Show the board below and start the next step. Stop only before step 8, after 2 loops, on an agent question, or when the user asks.
 
 ```
 <STORY-ID> · 5/8 approved
