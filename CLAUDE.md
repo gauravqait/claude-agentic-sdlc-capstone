@@ -18,6 +18,7 @@ Run: `/run-sdlc-workflow <STORY-ID>`
 | 8 | 08-pr-creator | 08-pr-summary.md |
 
 ## Rules
+- Each story is isolated: its files live in `docs/<STORY-ID>/` and its work on its own `feature/<story-id>-<slug>` branch. Never edit or overwrite another story.
 - A phase starts only after the previous one is approved. Step 8 (PR) needs explicit user approval.
 - Never write secrets anywhere.
 - Jira only via the `atlassian` MCP server, PRs only via the `github` MCP server.

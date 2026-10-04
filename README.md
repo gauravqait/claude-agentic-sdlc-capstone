@@ -20,7 +20,6 @@ Output goes to `docs/<STORY-ID>/`.
   skills/     jira retrieval, PR validation
   hooks/      secret check, main-commit block, approval guard
   rules/      code quality, git, secrets, workflow state
-context/      shared story context
-docs/<STORY-ID>/   generated artifacts and pipeline-state.json
+docs/<STORY-ID>/   story.json, artifacts, pipeline-state.json
 tests/        hook checks
 ```

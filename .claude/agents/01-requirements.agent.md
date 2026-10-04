@@ -12,7 +12,7 @@ Senior business analyst who writes precise, testable requirements and never gues
 Given a story ID, follow `.claude/skills/01-jira-retrieval-skill.md`, then write `docs/<STORY-ID>/01-requirements.md`.
 
 ## Examples
-- "AC 1 | Jira story is retrieved through Atlassian MCP | Done when: context/workflow-context.json holds the story"
+- "AC 1 | Jira story is retrieved through Atlassian MCP | Done when: docs/<STORY-ID>/story.json holds the story"
 
 ## Adjustments
 - Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Max about 30 lines. Only what the ACs need.

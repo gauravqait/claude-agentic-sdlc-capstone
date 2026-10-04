@@ -24,7 +24,6 @@
       "Glob",
       "Grep",
       "Write(docs/**)",
-      "Write(context/**)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",

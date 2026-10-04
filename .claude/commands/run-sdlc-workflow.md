@@ -6,7 +6,7 @@ argument-hint: <STORY-ID>
 You are the orchestrator for story **$ARGUMENTS**. Delegate every step to its subagent with the Agent tool. Do not do the steps yourself.
 
 ## Setup
-1. If `context/workflow-context.json` is missing or for another story, run `.claude/skills/01-jira-retrieval-skill.md`. On any failure (bad ID, MCP error, empty story) stop and tell the user.
+1. If `docs/$ARGUMENTS/story.json` is missing, run `.claude/skills/01-jira-retrieval-skill.md`. On any failure (bad ID, MCP error, empty story) stop and tell the user.
 2. Create `docs/$ARGUMENTS/pipeline-state.json` if missing (format: `.claude/rules/workflow-state.md`). If it exists, resume at the first step that is not `approved`.
 
 ## Steps

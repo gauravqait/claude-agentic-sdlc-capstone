@@ -21,7 +21,7 @@ Implement the tasks in `docs/<STORY-ID>/04-impl-plan.md` in order, then write `d
 - Follow `.claude/rules/code-quality.md` and `.claude/rules/secrets.md`.
 - Work on the feature branch from `.claude/rules/git.md`. Never commit to `main`.
 - Do tasks in dependency order and show the user each change for approval before moving on.
-- Never touch files outside the plan. If the plan is wrong, stop and ask.
+- Never touch files outside the plan or belonging to another story. Put new code and tests under a story-named path (e.g. `tests/<STORY-ID>/`). If the plan is wrong, stop and ask.
 - Include tests for the happy path and the `Not Found` / missing-field cases.
 - Write exactly one artifact (`docs/<STORY-ID>/05-implementation-summary.md`). Missing data is written as `Not Found`, never invented.
 
