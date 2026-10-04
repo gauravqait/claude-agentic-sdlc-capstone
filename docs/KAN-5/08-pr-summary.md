@@ -1,5 +1,5 @@
 # KAN-5 · PR Summary
-Step 8/8 · ⏳ awaiting approval
+Step 8/8 · 🟢 approved
 
 ## Summary
 Adds an agentic SDLC pipeline that turns Jira story KAN-5 into eight reviewed artifacts under `docs/KAN-5/`. It includes the eight agents, the run command, approval-gate and secret-scan hooks, two skills, and five test files. Steps 1-7 are approved; verification verdict is PASS, with AC 9 and AC 12 (checks (a)-(c)) reported as `Not Found` at step 7.
