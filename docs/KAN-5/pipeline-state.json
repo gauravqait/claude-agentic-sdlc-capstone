@@ -1,7 +1,7 @@
 {
   "story": "KAN-5",
   "progress": "🟢🟢⏳⚪⚪⚪⚪⚪ 2/8 approved",
-  "next": "03-design-review",
+  "next": "03-design-review (re-review after rework)",
   "steps": {
     "1": {
       "mark": "🟢",
@@ -51,5 +51,8 @@
       "artifact": "08-pr-summary.md",
       "status": "pending"
     }
+  },
+  "loops": {
+    "3->2": 1
   }
 }
