@@ -20,3 +20,15 @@ Input: `<STORY-ID>`. Read `docs/<STORY-ID>/08-pr-summary.md` and report PASS or 
 | 8 | No secrets (token prefixes, `Bearer `, `.env` values) |
 
 Any FAIL: list the fixes and do not raise the PR.
+
+## PR readiness checks (a)-(f)
+Run via the `github` MCP server after the draft, before user approval. Print `FAIL (x): <reason>` or `PASS (x)` for each. Any FAIL blocks the PR, names the check and stops for the user.
+
+| Check | Definition |
+|---|---|
+| (a) | Feature branch (not `main`) exists on the remote and the latest commits are pushed |
+| (b) | No merge conflicts with the base |
+| (c) | Steps 1-7 are all `approved` in `pipeline-state.json` |
+| (d) | `07-verification-report.md` has a `Verdict: PASS` line and no `FAIL` row in its test table |
+| (e) | Diff and artifacts contain no token pattern. Prefixes: `ghp_`, `gho_`, `ghs_`, `github_pat_`, `ATATT`; `Bearer ` plus a long token; a PEM private-key header. Report file and line only, never the value. Other vendor prefixes: Not Found |
+| (f) | `08-pr-summary.md` has Summary, Changes Made, Test Evidence, Known Limitations, Reviewer Checklist |

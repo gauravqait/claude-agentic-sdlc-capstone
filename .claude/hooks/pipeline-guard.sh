@@ -6,9 +6,10 @@ input=$(cat)
 has() { echo "$input" | grep -qE "$1"; }
 block() { echo "Blocked: $1" >&2; exit 2; }
 
-# 1. Subagent writing the state file (hook input has "agent_id" only for subagents)
+# 1. Subagent writing the state file (hook input has "agent_id" only for subagents).
+#    Only the target path counts, so documents may mention the file freely.
 if has '"tool_name"[[:space:]]*:[[:space:]]*"(Write|Edit)"'; then
-  has 'pipeline-state\.json' && has '"agent_id"' && block "subagents must not edit pipeline-state.json."
+  has '"file_path"[[:space:]]*:[[:space:]]*"[^"]*pipeline-state\.json"' && has '"agent_id"' && block "subagents must not edit pipeline-state.json."
   exit 0
 fi
 

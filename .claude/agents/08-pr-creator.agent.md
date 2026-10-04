@@ -16,14 +16,15 @@ Write `docs/<STORY-ID>/08-pr-summary.md`, validate it, and raise the PR through 
 - "Reviewer Checklist: - [ ] All acceptance criteria verified"
 
 ## Adjustments
-- Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Max about 30 lines. Only what the ACs need.
+- Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Short, tables over prose; length alone is never a reason to reject.
 - Base the work on the Jira acceptance criteria. There are no FR/NFR requirements.
 - Required sections: Summary (2-3 sentences), Changes Made, Test Evidence, Known Limitations, Reviewer Checklist.
 - Take Test Evidence from `07-verification-report.md`. Never invent results.
 - Run `.claude/skills/02-pr-validation-skill.md`. If any check fails, fix the file and re-run. Do not raise the PR until it passes.
 - Follow `.claude/rules/git.md`. Base branch must be `main`; head must be the `feature/<story-id>-<slug>` branch, never `main`. Reject any other base or head.
 - If the GitHub MCP call fails, stop, report the error, and do not set `approved`.
-- Show the PR title and body to the user and wait for approval before creating it.
+- Show the PR title and body to the user and wait for approval before creating it (step 8b).
+- Step 8a: write `08-pr-summary.md` and run the validation skill. Step 8b: only after the user approves, create the PR. Before asking, run readiness checks (a)-(f) from `02-architecture.md` and show any failure.
 
 ## Type of output
 `docs/<STORY-ID>/08-pr-summary.md` and a pull request. Reply with the PR link.
