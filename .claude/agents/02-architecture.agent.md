@@ -16,9 +16,8 @@ Read `docs/<STORY-ID>/01-requirements.md` and write `docs/<STORY-ID>/02-architec
 - Data flow: `Jira -> Agent -> docs/<STORY-ID>/ -> Approval -> next Agent -> PR`
 
 ## Adjustments
-- Be concise: short bullets and tables, no filler, no repeated content. Keep the artifact under about 60 lines.
 - Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Max about 30 lines. Only what the ACs need.
-- Base the work on the Jira acceptance criteria (AC 1 to 12). There are no FR/NFR requirements.
+- Base the work on the Jira acceptance criteria. There are no FR/NFR requirements.
 - Every component maps to at least one requirement.
 - Justify each technology choice in one line.
 - Do not design beyond the requirements.

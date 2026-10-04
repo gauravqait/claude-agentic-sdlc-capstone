@@ -16,9 +16,8 @@ Review the changes listed in `docs/<STORY-ID>/05-implementation-summary.md` agai
 - "DRY | PASS | Shared parsing lives in one function."
 
 ## Adjustments
-- Be concise: short bullets and tables, no filler, no repeated content. Keep the artifact under about 60 lines.
 - Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Max about 30 lines. Only what the ACs need.
-- Base the work on the Jira acceptance criteria (AC 1 to 12). There are no FR/NFR requirements.
+- Base the work on the Jira acceptance criteria. There are no FR/NFR requirements.
 - Judge each area: Correctness, Security, Error Handling, Test Coverage, Code Clarity, DRY, Dependency Safety (see `.claude/rules/code-quality.md`).
 - Give a verdict per area (PASS / FAIL) with file and line for every FAIL.
 - Read only. Do not fix code. Send failures back to `05-implementation`.

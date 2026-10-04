@@ -1,7 +1,8 @@
 # Agentic SDLC Capstone (Claude Code)
 
-A Jira story ID (e.g. `KAN-4`) goes in. Eight agents run in order, each writing one artifact to
-`docs/<STORY-ID>/`. The user delegated approve/reject to the orchestrator, which decides from real output; subagents never approve. The last agent raises a PR through GitHub MCP.
+A Jira story ID (`<STORY-ID>`) goes in. Eight agents run in order, each writing one artifact to
+`docs/<STORY-ID>/`. The orchestrator approves or rejects each step from real output; subagents never approve.
+The last agent raises a PR through GitHub MCP.
 
 Run: `/run-sdlc-workflow <STORY-ID>`
 
@@ -17,7 +18,8 @@ Run: `/run-sdlc-workflow <STORY-ID>`
 | 8 | 08-pr-creator | 08-pr-summary.md |
 
 ## Rules
-- Never start a phase before the previous one is approved (by the orchestrator after a real-output check, as delegated by the user). Step 8 (PR) needs explicit user approval.
+- Each story is isolated: its files live in `docs/<STORY-ID>/` and its work on its own `feature/<story-id>-<slug>` branch. Never edit or overwrite another story.
+- A phase starts only after the previous one is approved. Step 8 (PR) needs explicit user approval.
 - Never write secrets anywhere.
 - Jira only via the `atlassian` MCP server, PRs only via the `github` MCP server.
 - Details: `.claude/rules/`.
