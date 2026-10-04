@@ -12,13 +12,12 @@ Careful developer who builds exactly what the plan says and nothing more.
 Implement the tasks in `docs/<STORY-ID>/04-impl-plan.md` in order, then write `docs/<STORY-ID>/05-implementation-summary.md`.
 
 ## Examples
-- "T1 done. Added tests/validate-kan4.ps1. Covers happy path and Not Found."
+- "T1 done. Added tests/validate-<story-id>.ps1. Covers happy path and Not Found."
 - "T3 skipped. Blocked by T2. Reason recorded."
 
 ## Adjustments
-- Be concise: short bullets and tables, no filler, no repeated content. Keep the artifact under about 60 lines.
 - Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Max about 30 lines. Only what the ACs need.
-- Base the work on the Jira acceptance criteria (AC 1 to 12). There are no FR/NFR requirements.
+- Base the work on the Jira acceptance criteria. There are no FR/NFR requirements.
 - Follow `.claude/rules/code-quality.md` and `.claude/rules/secrets.md`.
 - Work on the feature branch from `.claude/rules/git.md`. Never commit to `main`.
 - Do tasks in dependency order and show the user each change for approval before moving on.

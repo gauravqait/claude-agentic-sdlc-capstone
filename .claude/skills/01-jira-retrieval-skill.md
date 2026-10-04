@@ -1,23 +1,17 @@
-# Skill: Jira Retrieval
+---
+name: jira-retrieval
+description: Fetch a Jira story by ID through the Atlassian MCP and save it to context/workflow-context.json. Use when starting the pipeline or when a story's summary and acceptance criteria are needed.
+argument-hint: <STORY-ID>
+---
 
-**Used by:** pipeline start (`/run-sdlc-workflow`) and `01-requirements` agent.
+# Jira Retrieval
 
-Input: a story ID (e.g. `KAN-4`).
+Input: `<STORY-ID>` (e.g. `ABC-12`).
 
-0. Check the ID matches `^[A-Z][A-Z0-9]+-[0-9]+$`. If not, stop and tell the user: `Invalid story ID`. Make no MCP call.
-1. Call `mcp__atlassian__getJiraIssue` with cloudId `thegauravqa.atlassian.net`, the story ID, and `responseContentFormat: markdown`.
-2. If the call fails, returns an error, or returns an empty result (no summary and no description), stop and tell the user: `Story not found` or the MCP error. Do not write any file and do not invent content.
-3. Write `context/workflow-context.json`:
-   ```json
-   {
-     "storyId": "KAN-4",
-     "summary": "",
-     "description": "",
-     "acceptanceCriteria": [],
-     "labels": [],
-     "status": ""
-   }
-   ```
-   This is the only file the story fields are written to. Fill only what Jira returned. Mark missing fields as `"Not Found"`.
-4. Create `docs/<STORY-ID>/` if it does not exist.
-5. Reply with the summary and the number of acceptance criteria found.
+1. **Validate** the ID against `^[A-Z][A-Z0-9]+-[0-9]+$`. If invalid, stop: `Invalid story ID`. No MCP call.
+2. **Find the site**: call `mcp__atlassian__getAccessibleAtlassianResources`, use its cloudId.
+3. **Fetch**: call `mcp__atlassian__getJiraIssue` with the cloudId, the ID and `responseContentFormat: markdown`.
+4. **Check**: on error or empty result (no summary and no description), stop with `Story not found` or the MCP error. Write nothing.
+5. **Save** `context/workflow-context.json` with `storyId`, `summary`, `description`, `acceptanceCriteria[]`, `labels[]`, `status`. Fill only what Jira returned; missing fields are `"Not Found"`.
+6. **Prepare** `docs/<STORY-ID>/` if missing.
+7. **Report** the summary and the acceptance-criteria count.

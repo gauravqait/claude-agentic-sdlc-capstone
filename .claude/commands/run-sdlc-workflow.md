@@ -1,5 +1,5 @@
 ---
-description: Run the agentic SDLC pipeline for a Jira story. Usage - /run-sdlc-workflow KAN-4
+description: Run the agentic SDLC pipeline for a Jira story. Usage - /run-sdlc-workflow <STORY-ID>
 argument-hint: <STORY-ID>
 ---
 
@@ -16,13 +16,13 @@ For each step:
 1. Set it to `in_progress` (⏳) and call the subagent with the story ID and the previous artifact paths only. If it returns questions, ask the user and call it again with the answers.
 2. When it finishes, show a short summary of the artifact, its path, and the `docs/$ARGUMENTS/` file list.
 3. Check the real output, not the agent's claim: file exists and is non-empty, covers the Jira ACs and the previous artifact, nothing invented (`Not Found` where missing), no secrets. Steps 5 to 7 also need real evidence (code, test output, findings).
-4. **Pass → approve** (user-delegated): `status` `approved`, `mark` 🟢, update `progress` and `next`, commit `docs($ARGUMENTS): <artifact>`.
-   **Fail → REJECT:** `status` `rejected`, `mark` 🔴, list the failed checks, call the same subagent again with them. After 2 rejections of one step, ask the user.
-5. Steps 6 and 7 that report problems send the pipeline back to `05-implementation`: that step and all later ones reset to `pending` (⚪). After 2 such loops, ask the user.
+4. **Pass → approve:** update the state file, commit `docs($ARGUMENTS): <artifact>`.
+   **Fail → reject:** list the failed checks and call the same subagent again with them. After 2 rejections of one step, ask the user.
+5. Review steps that report problems: reset and loop back as in `.claude/rules/workflow-state.md`.
 6. **Stop.** Show the board below and name the next agent. Continue only when the user says so.
 
 ```
-KAN-4 · 5/8 approved
+<STORY-ID> · 5/8 approved
 🟢 1 requirements   🟢 2 architecture   🟢 3 design-review
 🟢 4 impl-plan      🟢 5 implementation ⚪ 6 code-review
 ⚪ 7 verification   ⚪ 8 pr-creator
@@ -30,4 +30,4 @@ Next: 06-code-review
 ```
 🟢 approved · ⏳ working or awaiting · 🔴 rejected · ⚪ pending
 
-Step 8 raises the PR only after the user explicitly approves. Show the PR link at the end.
+Show the PR link after step 8.

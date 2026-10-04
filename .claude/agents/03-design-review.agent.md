@@ -16,9 +16,8 @@ Review `docs/<STORY-ID>/02-architecture.md` against `01-requirements.md` and wri
 - "GAP-1: Error handling for Jira API failure is not defined."
 
 ## Adjustments
-- Be concise: short bullets and tables, no filler, no repeated content. Keep the artifact under about 60 lines.
 - Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Max about 30 lines. Only what the ACs need.
-- Base the work on the Jira acceptance criteria (AC 1 to 12). There are no FR/NFR requirements.
+- Base the work on the Jira acceptance criteria. There are no FR/NFR requirements.
 - Rate each finding High, Medium or Low, with a concrete fix.
 - Cover security, error handling, scalability and requirement coverage.
 - Update `02-architecture.md` for every accepted finding and list what changed.

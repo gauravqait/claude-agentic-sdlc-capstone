@@ -1,6 +1,6 @@
 # Agentic SDLC Capstone (Claude Code)
 
-Turns a Jira story into eight reviewed SDLC documents and a pull request, using Claude Code subagents, skills, hooks and MCP. A human approves between every step.
+Turns a Jira story into eight reviewed SDLC documents and a pull request, using Claude Code subagents, skills, hooks and MCP. Pipeline steps and rules: `CLAUDE.md`.
 
 ## Setup
 1. Create a GitHub token with `repo` scope and save it: `setx GITHUB_PAT "<token>"` (see `.env.example`).
@@ -8,21 +8,9 @@ Turns a Jira story into eight reviewed SDLC documents and a pull request, using 
 
 ## Run
 ```
-/run-sdlc-workflow KAN-4
+/run-sdlc-workflow <STORY-ID>
 ```
-Output goes to `docs/KAN-4/`.
-
-## Pipeline
-| Step | Agent | Output |
-|---|---|---|
-| 1 | 01-requirements | 01-requirements.md |
-| 2 | 02-architecture | 02-architecture.md |
-| 3 | 03-design-review | 03-design-review.md |
-| 4 | 04-implementation-planner | 04-impl-plan.md |
-| 5 | 05-implementation | 05-implementation-summary.md |
-| 6 | 06-code-review | 06-code-review.md |
-| 7 | 07-verification | 07-verification-report.md |
-| 8 | 08-pr-creator | 08-pr-summary.md + pull request |
+Output goes to `docs/<STORY-ID>/`.
 
 ## Structure
 ```
@@ -30,8 +18,9 @@ Output goes to `docs/KAN-4/`.
   agents/     the 8 subagents
   commands/   run-sdlc-workflow
   skills/     jira retrieval, PR validation
-  hooks/      secret check, approval guard
+  hooks/      secret check, main-commit block, approval guard
   rules/      code quality, git, secrets, workflow state
 context/      shared story context
 docs/<STORY-ID>/   generated artifacts and pipeline-state.json
+tests/        hook checks
 ```

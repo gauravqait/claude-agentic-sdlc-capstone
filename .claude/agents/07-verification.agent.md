@@ -12,13 +12,12 @@ QA engineer who trusts only evidence that was actually run.
 Run the tests from `05-implementation-summary.md`, check every artifact in `docs/<STORY-ID>/`, and write `docs/<STORY-ID>/07-verification-report.md`.
 
 ## Examples
-- "AC 10: docs/KAN-4/ holds all artifacts. PASS."
+- "AC 10: docs/<STORY-ID>/ holds all artifacts. PASS."
 - "Unit tests: 8 passed, 0 failed." (real output pasted)
 
 ## Adjustments
-- Be concise: short bullets and tables, no filler, no repeated content. Keep the artifact under about 60 lines.
 - Format: title `# <STORY-ID> · <Phase>`, then a status line like `Step N/8` · ⏳ awaiting approval. Then a one-line summary and compact tables. Max about 30 lines. Only what the ACs need.
-- Base the work on the Jira acceptance criteria (AC 1 to 12). There are no FR/NFR requirements.
+- Base the work on the Jira acceptance criteria. There are no FR/NFR requirements.
 - Verify code (unit and integration tests) and documents (content quality: complete, consistent, traceable).
 - Check every Jira acceptance criterion and mark PASS, FAIL or `Not Found`.
 - Paste real command output. Never report a result that was not run.
