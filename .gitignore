@@ -27,5 +27,6 @@ desktop.ini
 .idea/
 .claude/*.docx
 
-# CodeMie analytics exports
+# CodeMie analytics exports and local CLI config (contains personal email)
 docs/codemie/
+.codemie/
