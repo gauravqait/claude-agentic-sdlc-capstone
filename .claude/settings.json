@@ -9,12 +9,22 @@
         ]
       },
       {
+        "matcher": "Read",
+        "hooks": [{ "type": "command", "command": "bash .claude/hooks/token-saver.sh" }]
+      },
+      {
         "matcher": "Bash",
         "hooks": [{ "type": "command", "command": "bash .claude/hooks/no-main-commit.sh" }]
       },
       {
         "matcher": "Agent|Task",
         "hooks": [{ "type": "command", "command": "bash .claude/hooks/pipeline-guard.sh" }]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [{ "type": "command", "command": "node .claude/hooks/prune-output.js" }]
       }
     ]
   },
