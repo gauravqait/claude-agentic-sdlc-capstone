@@ -15,11 +15,13 @@ Output goes to `docs/<STORY-ID>/`.
 ## Structure
 ```
 .claude/
-  agents/     the 8 subagents
-  commands/   run-sdlc-workflow
-  skills/     jira retrieval, PR validation
-  hooks/      secret check, main-commit block, approval guard
-  rules/      code quality, git, secrets, workflow state
+  commands/       run-sdlc-workflow (entry point, points to the orchestrator)
+  orchestrator/   orchestrator.md (step order, checks, approval, board)
+  agents/         the 8 subagents
+  skills/         jira retrieval, PR validation
+  hooks/          secret check, main-commit block, approval guard,
+                  token-saver (Read), prune-output (Bash output)
+  rules/          code quality, git, secrets, workflow state
 docs/<STORY-ID>/   story.json, artifacts, pipeline-state.json
 tests/        hook checks
 ```

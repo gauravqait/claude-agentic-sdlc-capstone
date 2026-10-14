@@ -4,7 +4,7 @@ A Jira story ID (`<STORY-ID>`) goes in. Eight agents run in order, each writing 
 `docs/<STORY-ID>/`. The orchestrator approves or rejects each step from real output; subagents never approve.
 The last agent raises a PR through GitHub MCP.
 
-Run: `/run-sdlc-workflow <STORY-ID>`
+Run: `/run-sdlc-workflow <STORY-ID>` (entry point; the orchestration logic is in `.claude/orchestrator/orchestrator.md`)
 
 | # | Agent | Artifact |
 |---|-------|----------|
